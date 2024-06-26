@@ -80,7 +80,7 @@ export default function SiteHeader() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 flex justify-center z-50 px-4">
+      <div className="fixed top-0 left-0 right-0 flex justify-center z-[100] px-4">
         <motion.div
           className={cn(
             "w-full max-w-screen-xl rounded-xl backdrop-blur-md mt-2 py-2 transition-all duration-200 bg-transparent border border-borderClr shadow-sm"
@@ -160,7 +160,7 @@ export default function SiteHeader() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
-            className="fixed inset-0 bg-white z-40 md:hidden"
+            className="fixed inset-0 bg-backgroundClr z-[99] md:hidden"
           >
             <motion.div
               variants={menuVariants}
@@ -172,7 +172,7 @@ export default function SiteHeader() {
               {navigation.path.map((item) => (
                 <motion.div key={item.pathname} variants={menuItemVariants}>
                   <Link href={item.path} onClick={handleLinkClick}>
-                    <p className="text-2xl text-gray-700 font-medium hover:text-gray-900 cursor-pointer">
+                    <p className="text-2xl text-primaryTextClr font-medium hover:text-white cursor-pointer">
                       {item.pathname}
                     </p>
                   </Link>

@@ -4,7 +4,7 @@ import Container from "../ui/container";
 export default function CTASection() {
   return (
     <Container className="bg-backgroundClr">
-      <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
+      <div className="mx-auto max-w-7xl pt-24 sm:px-6 sm:py-32 lg:px-8">
         <div className="relative isolate overflow-hidden  px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
           <div className="absolute inset-0 bg-gradient-to-br from-foregroundClr to-foregroundClr2 opacity-30" />
           <div className="mx-auto relative z-50 max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">

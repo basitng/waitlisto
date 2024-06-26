@@ -3,13 +3,13 @@ import AnimatedGradientText from "../magicui/animated-gradient-text";
 import { BorderBeam } from "../magicui/border-beam";
 import { Button } from "../ui/button";
 import Container from "../ui/container";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Companies } from "./company";
 import Particles from "../magicui/particles";
 
 const Hero = () => {
   return (
-    <Container>
+    <Container className="relative overflow-hidden lg:pt-0 pt-32">
       <Particles
         className="absolute inset-0"
         quantity={100}
@@ -17,11 +17,11 @@ const Hero = () => {
         color={"#ffffff"}
         refresh
       />
-      <section className="text-center pt-48 px-4 flex flex-col items-center justify-center">
-        <AnimatedGradientText className="bg-transparent mb-5">
+      <section className="text-center pt-16 sm:pt-24 md:pt-32 lg:pt-48 px-4 flex flex-col items-center justify-center">
+        <AnimatedGradientText className="bg-transparent rounded-full mb-3 sm:mb-5">
           <span
             className={cn(
-              `inline animate-gradient bg-gradient-to-r from-white to-stone-500 bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+              `inline animate-gradient bg-gradient-to-r from-white to-stone-500 bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent text-sm sm:text-base md:text-base`
             )}
           >
             Introducing Magic UI
@@ -41,38 +41,38 @@ const Hero = () => {
             }}
           />
         </div>
-        <div className="max-w-xl w-full mx-auto">
-          <h1 className="text-6xl font-bold mb-6 text-white">
+        <div className="max-w-xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-white">
             Friendly Waitlist for Developers
           </h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error,
             quis natus itaque nesciunt doloribus quaerat.
           </p>
         </div>
-        <div className="w-full relative z-50 flex flex-row justify-center items-center space-x-4">
-          <Button className="bg-white cursor-pointer hover:bg-white/90 text-black">
+        <div className="w-full relative z-50 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <Button className="w-full sm:w-auto bg-white cursor-pointer hover:bg-white/90 text-black">
             Start building
             <ChevronRight className="ml-2" />
           </Button>
-          <Button className="bg-foregroundClr hover:bg-foregroundClr/95 text-white ">
-            <div className="w-6 h-6 mr-2 flex items-center justify-center rounded-sm bg-foregroundClr2 ">
+          <Button className="w-full sm:w-auto bg-foregroundClr hover:bg-foregroundClr/95 text-white">
+            <div className="w-6 h-6 mr-2 flex items-center justify-center rounded-sm bg-foregroundClr2">
               B
             </div>
             Book a call
           </Button>
         </div>
 
-        <div className="overflow-hidden flex items-center justify-center my-20 relative rounded-xl">
+        <div className="overflow-hidden flex items-center justify-center my-10 sm:my-16 lg:my-20 relative rounded-xl max-w-full">
           <img
             src="/assets/dark-project-app-screenshot.png"
             alt="browser"
-            className="w-[1200px] rounded-[inherit] border border-gray-700 object-contain shadow-lg dark:block"
+            className="w-full max-w-[1200px] rounded-[inherit] border border-gray-700 object-contain shadow-lg dark:block"
           />
           <BorderBeam
             colorTo="#fff"
             colorFrom="#78716c"
-            size={550}
+            size={300}
             duration={12}
             delay={9}
           />

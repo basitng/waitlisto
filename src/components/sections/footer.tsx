@@ -226,7 +226,7 @@ export default function FooterSection() {
         </div>
       </div>
 
-      <h1 className="text-9xl my-32 text-transparent stroke-2 stroke-white opacity-15 tracking-wider pointer-events-none select-none font-bold text-center">
+      <h1 className="lg:text-9xl text-7xl lg:my-32 my-10 text-transparent stroke-2 stroke-white opacity-15 tracking-wider pointer-events-none select-none font-bold text-center">
         Waitlisto
       </h1>
     </footer>

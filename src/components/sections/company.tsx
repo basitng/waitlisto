@@ -18,7 +18,7 @@ export function Companies() {
             TRUSTED BY LEADING TEAMS
           </h3>
           <div className="relative mt-6">
-            <div className="grid grid-cols-2 place-items-center gap-2 md:grid-cols-4 xl:grid-cols-8 xl:gap-4">
+            <div className="grid grid-cols-3 place-items-center gap-3 md:grid-cols-4 xl:grid-cols-8 xl:gap-4">
               {companies.map((logo, idx) => (
                 <img
                   key={idx}

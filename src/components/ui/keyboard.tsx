@@ -20,9 +20,9 @@ const Key: React.FC<KeyProps> = ({
   return (
     <motion.div
       className={`
-        bg-opacity-10 bg-white text-white rounded-xl shadow-lg flex items-center justify-center
+        bg-opacity-10 bg-white text-white rounded-lg sm:rounded-xl shadow-lg flex items-center justify-center
         backdrop-filter backdrop-blur-md border border-opacity-30 border-white
-        ${wide ? "col-span-2 h-14" : "aspect-square"}
+        ${wide ? "col-span-2 h-8 sm:h-10 md:h-12 lg:h-14" : "aspect-square"}
         ${tall ? "row-span-2" : ""}
         ${highlighted ? "bg-opacity-20" : ""}
         relative overflow-hidden
@@ -33,7 +33,9 @@ const Key: React.FC<KeyProps> = ({
       onTapCancel={() => setIsPressed(false)}
       onTap={() => setTimeout(() => setIsPressed(false), 100)}
     >
-      <span className="text-lg font-medium z-10">{children}</span>
+      <span className="text-xs sm:text-sm md:text-base lg:text-lg font-medium z-10">
+        {children}
+      </span>
       <AnimatePresence>
         {isPressed && (
           <motion.div
@@ -49,7 +51,7 @@ const Key: React.FC<KeyProps> = ({
       </AnimatePresence>
       {highlighted && (
         <motion.div
-          className="absolute inset-0 bg-blue-500 rounded-xl"
+          className="absolute inset-0 bg-blue-500 rounded-lg sm:rounded-xl"
           animate={{
             opacity: [0.1, 0.2, 0.1],
             scale: [1, 1.05, 1],
@@ -67,9 +69,9 @@ const Key: React.FC<KeyProps> = ({
 
 const KeyboardLauncher: React.FC = () => {
   return (
-    <div className="relative bg-gradient-to-br from-foregroundClr to-foregroundClr2 p-8 rounded-2xl shadow-2xl max-w-2xl mx-auto overflow-hidden">
+    <div className="relative bg-gradient-to-br from-foregroundClr to-foregroundClr2 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-2xl max-w-full sm:max-w-2xl mx-auto overflow-hidden">
       <div className="absolute inset-0 backdrop-filter backdrop-blur-lg bg-opacity-30 bg-black"></div>
-      <div className="relative grid grid-cols-6 gap-3">
+      <div className="relative grid grid-cols-6 gap-1 sm:gap-2 md:gap-3">
         <Key highlighted>Esc</Key>
         <Key>Q</Key>
         <Key>W</Key>
@@ -104,7 +106,11 @@ const KeyboardLauncher: React.FC = () => {
               ease: "linear",
             }}
           >
-            <img src="/assets/logo.png" className="w-8" />
+            <img
+              src="/assets/logo.png"
+              className="w-4 sm:w-6 md:w-8"
+              alt="Logo"
+            />
           </motion.div>
         </Key>
       </div>
