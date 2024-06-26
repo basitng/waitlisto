@@ -21,6 +21,14 @@ const config = {
       linear: `"Linear","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Open Sans","Helvetica Neue",sans-serif`,
     },
     extend: {
+      textStrokeWidth: {
+        "1": "1px",
+        "2": "2px",
+      },
+      textStrokeColor: {
+        white: "#ffffff",
+      },
+
       colors: {
         backgroundClr: "#08090a",
         foregroundClr: "#232323",
@@ -126,8 +134,29 @@ const config = {
           "background-position-spin 3000ms infinite alternate",
       },
     },
+    variants: {
+      textStrokeWidth: ["responsive", "hover", "focus"],
+      textStrokeColor: ["responsive", "hover", "focus"],
+    },
   },
-  plugins: [require("tailwindcss-animate")],
+
+  plugins: [
+    require("tailwindcss-animate"),
+    function ({ addUtilities }: any) {
+      const newUtilities = {
+        ".stroke-1": {
+          "-webkit-text-stroke-width": "1px",
+        },
+        ".stroke-2": {
+          "-webkit-text-stroke-width": "2px",
+        },
+        ".stroke-white": {
+          "-webkit-text-stroke-color": "#ffffff",
+        },
+      };
+      addUtilities(newUtilities, ["responsive", "hover"]);
+    },
+  ],
 } satisfies Config;
 
 export default config;

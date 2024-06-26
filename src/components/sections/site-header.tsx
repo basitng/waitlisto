@@ -8,10 +8,10 @@ import { Menu, X } from "lucide-react";
 
 const navigation = {
   path: [
-    { pathname: "Projects", path: "#home" },
-    { pathname: "Solutions", path: "#solutions" },
+    { pathname: "Showcase", path: "#home" },
+    { pathname: "Features", path: "#features" },
     { pathname: "Pricing", path: "#pricing" },
-    { pathname: "Company", path: "#company" },
+    { pathname: "Testimonies", path: "#testimonials" },
     { pathname: "Support", path: "#support" },
   ],
   actions: [
@@ -83,7 +83,7 @@ export default function SiteHeader() {
       <div className="fixed top-0 left-0 right-0 flex justify-center z-50 px-4">
         <motion.div
           className={cn(
-            "w-full max-w-screen-lg rounded-xl backdrop-blur-md mt-2 py-2 transition-all duration-200 bg-transparent border border-borderClr shadow-sm"
+            "w-full max-w-screen-xl rounded-xl backdrop-blur-md mt-2 py-2 transition-all duration-200 bg-transparent border border-borderClr shadow-sm"
           )}
         >
           <div className="px-4">
@@ -96,7 +96,7 @@ export default function SiteHeader() {
               <div className="hidden md:flex items-center justify-center flex-1">
                 {navigation.path.map((item) => (
                   <Link key={item.pathname} href={item.path}>
-                    <p className="text-sm text-textClr font-normal  hover:text-white cursor-pointer px-4">
+                    <p className="text-sm text-primaryTextClr font-normal  hover:text-white cursor-pointer px-4">
                       {item.pathname}
                     </p>
                   </Link>

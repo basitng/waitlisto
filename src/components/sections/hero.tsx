@@ -4,16 +4,24 @@ import { BorderBeam } from "../magicui/border-beam";
 import { Button } from "../ui/button";
 import Container from "../ui/container";
 import { ArrowRight, ChevronRight } from "lucide-react";
-import { Companies } from "./testimonial";
+import { Companies } from "./company";
+import Particles from "../magicui/particles";
 
 const Hero = () => {
   return (
     <Container>
+      <Particles
+        className="absolute inset-0"
+        quantity={100}
+        ease={80}
+        color={"#ffffff"}
+        refresh
+      />
       <section className="text-center pt-48 px-4 flex flex-col items-center justify-center">
         <AnimatedGradientText className="bg-transparent mb-5">
           <span
             className={cn(
-              `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+              `inline animate-gradient bg-gradient-to-r from-white to-stone-500 bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
             )}
           >
             Introducing Magic UI
@@ -33,17 +41,19 @@ const Hero = () => {
             }}
           />
         </div>
-        <h1 className="text-6xl tracking-tighter font-bold mb-6 text-white">
-          Waitlist for Developers
-        </h1>
-        <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, quis
-          natus itaque nesciunt doloribus quaerat.
-        </p>
-        <div className="w-full flex flex-row justify-center items-center space-x-4">
-          <Button className="bg-white/95 hover:bg-white text-black">
+        <div className="max-w-xl w-full mx-auto">
+          <h1 className="text-6xl font-bold mb-6 text-white">
+            Friendly Waitlist for Developers
+          </h1>
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error,
+            quis natus itaque nesciunt doloribus quaerat.
+          </p>
+        </div>
+        <div className="w-full relative z-50 flex flex-row justify-center items-center space-x-4">
+          <Button className="bg-white cursor-pointer hover:bg-white/90 text-black">
             Start building
-            <ArrowRight className="ml-2" />
+            <ChevronRight className="ml-2" />
           </Button>
           <Button className="bg-foregroundClr hover:bg-foregroundClr/95 text-white ">
             <div className="w-6 h-6 mr-2 flex items-center justify-center rounded-sm bg-foregroundClr2 ">
@@ -59,7 +69,13 @@ const Hero = () => {
             alt="browser"
             className="w-[1200px] rounded-[inherit] border border-gray-700 object-contain shadow-lg dark:block"
           />
-          <BorderBeam size={250} duration={12} delay={9} />
+          <BorderBeam
+            colorTo="#fff"
+            colorFrom="#78716c"
+            size={550}
+            duration={12}
+            delay={9}
+          />
         </div>
         <Companies />
       </section>

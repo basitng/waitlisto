@@ -8,9 +8,9 @@ import AnimatedNotification from "../ui/notification";
 
 export default function IntroSection() {
   return (
-    <Container>
+    <Container className="my-44">
       <div className="max-w-lg w-full mx-auto my-24">
-        <h3 className="text-white text-3xl font-bold mb-2 leading-tight text-center">
+        <h3 className="text-white text-3xl font-semibold mb-2 tracking-wide text-center">
           Exclusive&nbsp;
           <span className="text-transparent bg-clip-text from-stone-200 to-textClr bg-gradient-to-r">
             Features
